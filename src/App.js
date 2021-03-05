@@ -24,15 +24,15 @@ if(Number.isInteger(Number(inputValue))){
   setcurrentArr( arrayData.filter((item)=>{
     if(item.length>inputValue) return <div>{item}</div>
   }))
-} else {alert("Input number")}
+} else {alert("Enter the length string")}
 }
 
 function OutputDependingOnSubStr(){
   if(Number.isInteger(Number(inputValue))){
-    alert("Input string")
+    alert("Enter the desired substring")
   }
   if(typeof inputValue === "string" ){
-      if(checked){
+      if(!checked){
         const strUpper= inputValue.toLocaleUpperCase();
         const strLower= inputValue.toLowerCase();
         setcurrentArr(arrayData.filter((item)=>{
