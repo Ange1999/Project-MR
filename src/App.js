@@ -4,6 +4,12 @@ import './main.css'
 const subStrButton={
   marginLeft: "20px"
 }
+const linkStyle={
+  color: "green",
+  fontWeight: "bold",
+  textDecoration: "none"
+
+}
 
 function App() {
  const [arrayData, setArrayData] = useState([]);
@@ -55,6 +61,9 @@ function changeInputValue(oEvent){
 }
   return (
     <div className="App">
+      <div>
+      <p><strong>For work with data, connect to the public proxy server using the link: </strong><a style={linkStyle} href="https://cors-anywhere.herokuapp.com/corsdemo">СONNECT PROXY SERVER</a></p>
+    </div>
     <div className="inputsContainer">
     <input type="text" value = {inputValue} onChange={changeInputValue}></input>
     <input type="checkbox"  defaultChecked={checked} onChange={changeCheckValue}></input>
