@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
-import data from './data.json'
 import './main.css'
+
 const subStrButton={
   marginLeft: "20px"
 }
+
 function App() {
-  const arrayData = data.data;
- //const [arrayData, setArrayData] = useState([]);
+ const [arrayData, setArrayData] = useState([]);
  const [inputValue, setInputValue] = useState("");
  const [currentArr, setcurrentArr] = useState(arrayData);
  const [checked, setChecked] = useState(true);
 
-//  useEffect(()=>{  // Локально с прокси сервером работает, возникли проблемы при деплое на gh-pages.
-//   fetch('/data.json')
-//   .then(response=> response.json())
-//   .then(arrData=>{
-//     setArrayData(arrData.data);
-//   })
-//  },[])
+ useEffect(()=>{  
+  fetch('https://cors-anywhere.herokuapp.com/https://www.mrsoft.by/data.json')
+  .then(response=> response.json())
+  .then(arrData=>{
+    setArrayData(arrData.data);
+  })
+ },[])
 
  function OutputDependingOnLength(){
 if(Number.isInteger(Number(inputValue))){
